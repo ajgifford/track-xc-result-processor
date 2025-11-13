@@ -1,10 +1,16 @@
 {
   "name": "track-xc-result-processor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Process track & field and cross country CSV results to generate team reports, event rankings, and season results",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "process-track": "ts-node src/track/process-track-field.ts",
+    "process-xc": "ts-node src/xc/process-xc-results.ts",
+    "optimize-simple": "ts-node src/track/optimize-team-entry-simple.ts",
+    "optimize-advanced": "ts-node src/track/optimize-team-entry-advanced.ts",
+    "test-track": "ts-node src/track/test-run.ts",
+    "test-xc": "ts-node src/xc/test-xc.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +19,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@types/node": "^24.7.2",
+    "@types/node": "^24.10.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
